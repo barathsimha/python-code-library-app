@@ -6,37 +6,37 @@ services:
       - "3306:3306"
     deploy:
       replicas: 1
-  auth_service:
+  auth-service:
     image: barath1055/library-repo:auth
     ports:
       - "5001:5001"
     deploy:
       replicas: 1
-    depends_on:
+    depends-on:
       - db
-  book_service:
+  book-service:
     image: barath1055/library-repo:book
     ports:
       - "5002:5002"
     deploy:
       replicas: 1
-    depends_on:
+    depends-on:
       - db
-  borrow_service:
+  borrow-service:
     image: barath1055/library-repo:borrow
     ports:
       - "5003:5003"
     deploy:
       replicas: 1
-    depends_on:
+    depends-on:
       - db
-  app_service:
+  app-service:
     image: barath1055/library-repo:app
     ports:
       - "5000:5000"
     deploy:
       replicas: 1
-    depends_on:
-      - auth_service
-      - book_service
-      - borrow_service
+    depends-on:
+      - auth-service
+      - book-service
+      - borrow-service
