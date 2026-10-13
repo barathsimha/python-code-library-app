@@ -12,7 +12,7 @@ services:
       - "5001:5001"
     deploy:
       replicas: 1
-    depends-on:
+    depends_on:
       - db
   book-service:
     image: barath1055/library-repo:book
